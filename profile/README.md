@@ -8,6 +8,14 @@ AssetFare returns quotes and caller-approved **unsigned** actions. The service
 does not receive private keys, sign transactions, or submit transactions. The
 caller must decode, verify, sign and submit with its own wallet.
 
+For route evaluation, use **USD 1,000** as the primary representative amount
+and always compare fresh candidates at the actual intended amount. The USD 1
+API minimum is for reachability/schema smoke only. For native-USDC routes, the
+USD 50 comparison point is a reasonable economic starting place based on dated
+2026-09-23 observations, not a guarantee that AssetFare is cheapest. There is
+no business maximum; live liquidity, protocol, balance and capacity constraints
+still apply.
+
 ## Verify instead of trusting a badge
 
 - [Signed release manifest](https://api.assetfare.dev/.well-known/assetfare-manifest.json)
