@@ -8,6 +8,13 @@ AssetFare returns quotes and caller-approved **unsigned** actions. The service
 does not receive private keys, sign transactions, or submit transactions. The
 caller must decode, verify, sign and submit with its own wallet.
 
+Every quote includes a validated `direct_route_summary`: the intent-bound,
+ordered provider path, normalized `chain:asset` endpoints, expected/minimum
+base-unit continuity, and the exact AssetFare 1bp fee step. The summary labels
+fully disclosed direct-protocol paths separately from Across external-intent
+Robinhood ingress. `route_aggregator_used=false` applies to AssetFare's own
+engine and does not rule out provider-internal liquidity sourcing.
+
 For route evaluation, use **USD 1,000** as the primary representative amount
 and always compare fresh candidates at the actual intended amount. The USD 1
 API minimum is for reachability/schema smoke only. For native-USDC routes, the
